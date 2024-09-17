@@ -85,8 +85,6 @@ echo
 read -p "Enter your private key: " PRIV_KEY
 read -p "Enter your Alchemy WSS URL for Ethereum Mainnet: " MAINNET_WSS
 read -p "Enter your Alchemy HTTP URL for Ethereum Mainnet: " MAINNET_HTTP
-read -p "Enter your Alchemy WSS URL for Sepolia Ethereum: " SEPOLIA_WSS
-read -p "Enter your Alchemy HTTP URL for Sepolia Ethereum: " SEPOLIA_HTTP
 
 cat <<EOF > .env
 ############### Sensitive config ###############
@@ -99,14 +97,12 @@ TORA_ENV=production
 
 MAINNET_WSS="$MAINNET_WSS"
 MAINNET_HTTP="$MAINNET_HTTP"
-SEPOLIA_WSS="$SEPOLIA_WSS"
-SEPOLIA_HTTP="$SEPOLIA_HTTP"
 
 REDIS_TTL=86400000
 
 ############### App specific config ###############
 
-CONFIRM_CHAINS='["sepolia"]'
+CONFIRM_CHAINS='["mainnet"]'
 CONFIRM_MODELS='[13]'
 
 CONFIRM_USE_CROSSCHECK=true
